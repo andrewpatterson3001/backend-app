@@ -10,7 +10,7 @@ Rails.application.routes.draw do
     resources :students
   end
 
-  post 'classrooms/:classroom_id/students/:id/codes/' => 'codes#create'
+  patch 'classrooms/:classroom_id/students/:id/codes/' => 'codes#update'
     #   resources :products do
   #     resources :comments, :sales
   #     resource :seller
