@@ -4,7 +4,17 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
+  root 'classooms#index'
 
+  resources :classrooms do
+    resources :students
+  end
+
+  post 'classrooms/:classroom_id/students/:id/codes/' => 'codes#create'
+    #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
@@ -27,10 +37,7 @@ Rails.application.routes.draw do
   #   end
 
   # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
+
 
   # Example resource route with more complex sub-resources:
   #   resources :products do
