@@ -8,4 +8,8 @@ class ClassroomsController < ApplicationController
     @classroom = Classroom.find_by_id(params[:id])
     render json: @classroom
   end
+
+  def create
+    @classroom = Classroom.create(teacher_name: params[:teacher_name])
+  end
 end
